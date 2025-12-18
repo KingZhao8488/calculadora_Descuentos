@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Descuentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Descuentos</h1>
+    
+        <form id="discountForm">
+            <div class="input-group">
+                <label for="price">Precio Original:</label>
+                <input type="number" id="price" name="price" placeholder="Ejemplo: 100" step="0.01" min="0">
+                <span class="error" id="priceError">Por favor ingresa un precio válido</span>
+            </div>
+
+            <div class="input-group">
+                <label for="discount">Porcentaje de Descuento (%):</label>
+                <input type="number" id="discount" name="discount" placeholder="Ejemplo: 20" step="0.01" min="0" max="100">
+                <span class="error" id="discountError">Ingresa un descuento entre 0 y 100</span>
+            </div>
+
+            <button type="button" onclick="calcularDescuento()">Calcular Descuento</button>
+            <button type="button" onclick="clearForm()" style="background: linear-gradient(135deg, #fb9393 0%, #c72a3f 100%); margin-top: 10px;">Limpiar</button>
+        </form>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <div class="result-item">
+                <span class="result-label">Precio Original:</span>
+                <span class="result-value" id="displayOriginal">$0.00</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Descuento:</span>
+                <span class="result-value" id="displayDiscount">$0.00</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Precio Final:</span>
+                <span class="result-value final-price" id="displayFinal">$0.00</span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Ahorras:</span>
+                <span class="result-value" id="displaySavings">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
